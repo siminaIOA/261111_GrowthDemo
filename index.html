@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#111111" />
+    <meta name="description" content="Explore differential growth. A small interactive experiment in how simple rules produce complex forms, for F0RMA." />
+    <title>261111_GrowthDemo</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script type="module" src="./demo.mjs"></script>
+  </head>
+  <body>
+    <main>
+      <section class="hero" aria-labelledby="title">
+        <header class="masthead">
+          <a class="wordmark" href="https://www.f0rma.com/" target="_blank" rel="noopener" aria-label="F0RMA website, opens in a new tab">F<span>[0]</span>RMA</a>
+          <div class="experiment-id"><span>EXP. 001</span><i></i><span>DIFFERENTIAL GROWTH</span></div>
+        </header>
+        <div class="hero-copy">
+          <p class="eyebrow"><span>01</span> LIVING SYSTEMS</p>
+          <h1 id="title">A little room<br />to <em>grow.</em></h1>
+          <p class="description">A field of living contours. Different local rules shape each one. Move your cursor and influence what happens next.</p>
+          <p class="gesture-hint"><span class="cursor-icon" aria-hidden="true"></span> Move to guide · drag on touch</p>
+        </div>
+        <div class="stage">
+          <div class="stage-meta" aria-hidden="true">
+            <span>SEED <b id="seed-value">2048</b></span>
+            <span><b id="point-count">64</b> POINTS</span>
+            <span>STEP <b id="step-count">0000</b></span>
+          </div>
+          <div class="canvas-wrap" id="canvas-wrap">
+            <canvas id="growth" role="img" aria-label="Several closed loops spread across the full surface and develop varied organic folds. Move the mouse over the canvas to guide the nearest contour, or drag on a touch screen.">Your browser cannot display this interactive canvas. The explanation below describes the experiment.</canvas>
+            <span class="axis axis-top" aria-hidden="true">+</span>
+            <span class="axis axis-bottom" aria-hidden="true">+</span>
+            <span class="stage-caption" id="stage-caption">MOVE YOUR CURSOR TO GUIDE IT</span>
+          </div>
+        </div>
+        <div class="control-dock" aria-label="Growth controls">
+          <div class="dock-brand" aria-hidden="true">F<span>[0]</span>RMA</div>
+          <div class="dock-divider"></div>
+          <div class="actions">
+            <button id="toggle" class="primary" type="button" disabled><span id="play-icon" aria-hidden="true">▶</span><span id="toggle-label">Grow</span></button>
+            <button id="new-seed" type="button" disabled>New seed</button>
+            <button id="reset" type="button" disabled>Reset</button>
+          </div>
+          <div class="dock-divider controls-divider"></div>
+          <div class="compact-control">
+            <label for="speed">Speed <output id="speed-value" for="speed">1×</output></label>
+            <input id="speed" type="range" min="0.5" max="3" value="1" step="0.5" aria-describedby="speed-hint" />
+            <span id="speed-hint" class="sr-only">Take your time, or watch it unfold.</span>
+          </div>
+          <div class="compact-control">
+            <label for="spacing">Spacing <output id="spacing-value" for="spacing">16</output></label>
+            <input id="spacing" type="range" min="10" max="24" value="16" step="1" aria-describedby="spacing-hint" />
+            <span id="spacing-hint" class="sr-only">Less space creates finer, tighter folds.</span>
+          </div>
+          <div class="compact-control">
+            <label for="variation">Variation <output id="variation-value" for="variation">55%</output></label>
+            <input id="variation" type="range" min="0" max="100" value="55" step="1" aria-describedby="variation-hint" />
+            <span id="variation-hint" class="sr-only">Change how much the local growth rules differ across the surface.</span>
+          </div>
+        </div>
+        <div class="status-line">
+          <span class="state-label" id="state-label">● READY</span>
+          <p class="status" id="status" role="status">Ready when you are. Press Grow to begin.</p>
+        </div>
+        <a class="scroll-cue" href="#process"><span>SCROLL</span><i aria-hidden="true"></i></a>
+      </section>
+      <section class="process" id="process" aria-labelledby="how-title">
+        <header class="section-heading">
+          <p><span>02</span> BEHIND THE FORM</p>
+          <h2 id="how-title">Complexity,<br />from proximity.</h2>
+        </header>
+        <div class="rules">
+          <article><span>01</span><h3>Connect</h3><p>Each contour stays connected to its neighbours, keeping its own continuous line.</p></article>
+          <article><span>02</span><h3>Make space</h3><p>Nearby points push away from each other and begin to form local folds.</p></article>
+          <article><span>03</span><h3>Grow</h3><p>Long edges divide. Each new point creates another possibility for the form.</p></article>
+        </div>
+        <details>
+          <summary>How does the interaction work? <span aria-hidden="true">+</span></summary>
+          <div class="details-copy"><p>This is a two-dimensional differential-growth study. Seven seeded contours spread across the surface and continue beyond its edges. Each step balances local repulsion with neighbour cohesion, then adds points where a line stretches. Nearby lines also make room for one another.</p><p>Each contour has its own line thickness, curl, drift, directional pressure, pulse, and outward growth. Its line width changes along the contour as it develops. Variation changes how strongly those rules respond. Move the pointer to draw the nearest section toward it; drag on touch screens. The contours keep evolving after the canvas fills, so you can continue reshaping them. Spacing changes the repulsion distance, while Speed changes playback. Reset replays the current seed with your settings; New seed starts a different field.</p></div>
+        </details>
+      </section>
+      <footer class="page-footer"><span>F[0]RMA</span><span>SEARCHING FOR WAYS TO SHAPE MATERIALS &amp; SPACE.</span><span>EXPERIMENT 001</span></footer>
+      <noscript><p class="noscript">JavaScript is needed for the interactive experiment. The three rules above explain how the form grows.</p></noscript>
+    </main>
+  </body>
+</html>

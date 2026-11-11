@@ -1,0 +1,14 @@
+{
+  "name": "261111_growthdemo",
+  "version": "1.0.0",
+  "description": "Interactive differential growth experiment with seeded contours, pointer guidance, and live controls.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "type": "module",
+  "devDependencies": {
+    "vite": "^7.3.0"
+  }
+}
